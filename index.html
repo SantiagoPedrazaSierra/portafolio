@@ -1,11 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santiago Pedraza | Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+  <div class="editor-layout">
+    <!-- Sidebar estilo VS Code -->
+    <aside class="sidebar">
+      <div class="explorer-title">EXPLORER</div>
+      <div class="logo">SANTIDEV</div>
+      
+      <nav class="file-explorer">
+        <ul>
+          <li class="file active" data-tab="about">📄 about-me.json</li>
+          <li class="file" data-tab="skills">📄 skills.js</li>
+          <li class="file" data-tab="projects">📄 projects.ts</li>
+          <li class="folder">📁 education</li>
+          <li class="folder">📁 experience</li>
+          <li class="file" data-tab="contact">📄 contact.php</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Área principal -->
+    <main class="main-content">
+      <!-- Pestañas superiores -->
+      <header class="tabs">
+        <div class="tab active" data-tab="about">about-me.json</div>
+        <div class="tab" data-tab="skills">skills.js</div>
+        <div class="tab" data-tab="projects">projects.ts</div>
+        <div class="tab" data-tab="contact">contact.php</div>
+      </header>
+
+      <!-- Contenido dinámico -->
+      <section class="content">
+        <!-- Página About -->
+        <div class="tab-content active" id="about">
+          <div class="welcome-message">// Hola, soy Santiago Pedraza 👋</div>
+          <div class="content-section">
+            <pre>{
+  <span class="json-key">"name"</span>: <span class="token string">"Santiago Pedraza"</span>,
+  <span class="json-key">"role"</span>: <span class="token string">"Full Stack Developer"</span>,
+  <span class="json-key">"location"</span>: <span class="token string">"Bogotá, Colombia"</span>,
+  <span class="json-key">"about"</span>: <span class="token string">"Apasionado desarrollador con experiencia en creación de soluciones web completas. Especializado en JavaScript tanto en frontend como backend."</span>,
+  <span class="json-key">"hobbies"</span>: [
+    <span class="token string">"Programación"</span>,
+    <span class="token string">"Videojuegos"</span>,
+    <span class="token string">"Tecnología"</span>
+  ]
+}</pre>
+          </div>
+        </div>
+
+        <!-- Página Skills -->
+        <div class="tab-content" id="skills">
+          <div class="content-section">
+            <pre><span class="token keyword">const</span> <span class="token variable">skills</span> <span class="token operator">=</span> {
+  <span class="json-key">frontend</span>: [
+    <span class="token string">"HTML5"</span>, 
+    <span class="token string">"CSS3"</span>, 
+    <span class="token string">"JavaScript"</span>, 
+    <span class="token string">"React"</span>, 
+    <span class="token string">"Vue"</span>, 
+    <span class="token string">"TailwindCSS"</span>
+  ],
+  <span class="json-key">backend</span>: [
+    <span class="token string">"Node.js"</span>,
+    <span class="token string">"Express"</span>,
+    <span class="token string">"Python"</span>,
+    <span class="token string">"Django"</span>,
+    <span class="token string">"MongoDB"</span>,
+    <span class="token string">"MySQL"</span>
+  ],
+  <span class="json-key">tools</span>: [
+    <span class="token string">"Git"</span>,
+    <span class="token string">"Docker"</span>,
+    <span class="token string">"Linux"</span>,
+    <span class="token string">"VS Code"</span>,
+    <span class="token string">"Figma"</span>,
+    <span class="token string">"Postman"</span>
+  ]
+};</pre>
+          </div>
+        </div>
+
+        <!-- Página Projects -->
+        <div class="tab-content" id="projects">
+          <div class="content-section">
+            <pre><span class="token keyword">interface</span> <span class="token type">Project</span> {
+  <span class="property-color">name</span>: <span class="token type">string</span>;
+  <span class="property-color">description</span>: <span class="token type">string</span>;
+  <span class="property-color">technologies</span>: <span class="token type">string</span>[];
+  <span class="property-color">link</span>?: <span class="token type">string</span>;
+}
+
+<span class="token keyword">const</span> <span class="token variable">myProjects</span>: <span class="token type">Project</span>[] <span class="token operator">=</span> [
+  {
+    <span class="property-color">name</span>: <span class="token string">"E-commerce Platform"</span>,
+    <span class="property-color">description</span>: <span class="token string">"Plataforma completa con carrito de compras"</span>,
+    <span class="property-color">technologies</span>: [<span class="token string">"React"</span>, <span class="token string">"Node.js"</span>],
+    <span class="property-color">link</span>: <span class="token string">"https://github.com/santidev/ecommerce"</span>
+  },
+  {
+    <span class="property-color">name</span>: <span class="token string">"Task Manager API"</span>,
+    <span class="property-color">description</span>: <span class="token string">"API REST con autenticación JWT"</span>,
+    <span class="property-color">technologies</span>: [<span class="token string">"Express"</span>, <span class="token string">"MongoDB"</span>]
+  }
+];</pre>
+          </div>
+        </div>
+
+        <!-- Página Contact -->
+        <div class="tab-content" id="contact">
+          <div class="content-section">
+            <div class="contact-form">
+              <pre><span class="token comment">&lt;?php</span>
+<span class="token keyword">if</span> (<span class="token variable">$_SERVER</span>[<span class="token string">'REQUEST_METHOD'</span>] <span class="token operator">===</span> <span class="token string">'POST'</span>) {
+  <span class="token variable">$name</span> <span class="token operator">=</span> <span class="token variable">$_POST</span>[<span class="token string">'name'</span>];
+  <span class="token variable">$email</span> <span class="token operator">=</span> <span class="token variable">$_POST</span>[<span class="token string">'email'</span>];
+  <span class="token variable">$message</span> <span class="token operator">=</span> <span class="token variable">$_POST</span>[<span class="token string">'message'</span>];
+  
+  <span class="token comment">// Lógica de envío</span>
+  <span class="token keyword">echo</span> <span class="token string">"¡Gracias por tu mensaje, <span class="token variable">$name</span>!"</span>;
+}
+<span class="token comment">?&gt;</span></pre>
+              <form class="form-style" id="contactForm">
+                <div class="form-group">
+                  <label for="name"><span class="token variable">$name</span> = </label>
+                  <input type="text" id="name" name="name" placeholder='"Tu nombre"' required>
+                </div>
+                <div class="form-group">
+                  <label for="email"><span class="token variable">$email</span> = </label>
+                  <input type="email" id="email" name="email" placeholder='"tu@email.com"' required>
+                </div>
+                <div class="form-group">
+                  <label for="message"><span class="token variable">$message</span> = </label>
+                  <textarea id="message" name="message" placeholder='"Tu mensaje..."' required></textarea>
+                </div>
+                <button type="submit"><span class="token function">submit_contact</span>()</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
